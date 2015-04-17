@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var kittenNumber1 = Math.floor(Math.random() * (7 - 1)) + 1;
   var kittenNumber2 = Math.floor(Math.random() * (14 - 8)) + 8;
+
   var elPhoto1 = document.getElementById('photo1');
   elPhoto1.setAttribute('src',kittens[kittenNumber1].source);
 
@@ -38,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var canvas = document.getElementById('canvas1');
 
-  var ctx = canvas1.getContext('2d');
-  var myNewChart = new Chart(ctx).Pie(data,options);
+  var ctx = canvas.getContext('2d');
+
 
   var data = [
     {
@@ -61,7 +62,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         label: "Yellow"
     }
 ]
-
+ var myNewChart = new Chart(ctx).Pie(data);
+ myNewChart.update();
   var votedOne = document.getElementById('choose1');
   var votedTwo = document.getElementById('choose2');//the listener will go on this
   var voteForOne = function(event) {
@@ -109,5 +111,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   votedOne.addEventListener('click', voteForOne);
   votedTwo.addEventListener('click', voteForTwo);
+
 });
 })();
