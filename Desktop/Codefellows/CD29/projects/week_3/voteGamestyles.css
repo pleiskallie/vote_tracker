@@ -1,0 +1,32 @@
+body {
+  font-family: 'Lucida Console';
+  font-size: 1em;
+  padding-left: 30px;
+}
+main {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+section {
+  width: 100%;
+  margin: 0 auto;
+}
+h1 {
+  font-family: 'Lucida Console';
+  font-size: 300%;
+  letter-spacing: .1em;
+  margin: 20px auto;
+  padding-left: 0;
+}
+h2 {
+  font-size: 120%;
+  color: red;
+  margin: 10px auto;
+}
+p {
+  font-size: 100%;
+  margin-bottom: 20px;
+}
+
+
