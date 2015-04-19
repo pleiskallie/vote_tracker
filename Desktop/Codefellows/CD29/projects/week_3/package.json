@@ -1,0 +1,22 @@
+{
+  "name": "kittyElection_vote_server",
+  "version": "0.1.0",
+  "description": "server for Kitty Election Vote Tracker",
+  "main": "voteGameindex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pleiskallie/vote_tracker"
+  },
+  "author": "pleiskallie@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pleiskallie/vote_tracker/issues"
+  },
+  "homepage": "https://github.com/pleiskallie/vote_tracker",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
