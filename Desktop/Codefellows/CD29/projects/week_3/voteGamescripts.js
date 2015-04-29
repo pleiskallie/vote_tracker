@@ -36,8 +36,7 @@ var kittyCounter = (function(){
   var el = $('#photo2');
   el.attr('src',kittens[kittenNumber2].source);
 };
-  //var canvas = document.getElementById('canvas1');
-  //var ctx = canvas.getContext('2d');
+
   var makeChart = function()  {
     var data = [
     {
@@ -67,107 +66,58 @@ var kittyCounter = (function(){
     //     color: "#FDB45C",
     //     highlight: "#FFC870",
     //     label: "Yellow"
+
  var myNewChart = new Chart(ctx).Pie(data);
  myNewChart.update();
   var votedOne = document.getElementById('choose1');
   var votedTwo = document.getElementById('choose2');//the listener will go on this
-
   var voteForOne = function(event) {
     event.preventDefault();
     kittens.votes1 += 1;
-      if (kittens[kittenNumber1].votes > kittens[kittenNumber2].votes) {
-        var el = $('#one-wins');
-        el.attr('class', 'showthis blink');
-        var el = $('#vote-count');
-        el.html(kittens[kittenNumber1].name + ' has ' + kittens[kittenNumber1].votes + ' votes, but ' + kittens[kittenNumber2].name + ' only has ' + kittens[kittenNumber2].votes + '.');
-      } else if (kittens[kittenNumber1].votes < kittens[kittenNumber2].votes) {
-        var el = $('#two-wins');
-        el.attr('class', 'showthis blink');
-        var el = $('#vote-count');
-        el.html(kittens[kittenNumber2].name + ' has ' + kittens[kittenNumber2].votes + ' votes, but ' + kittens[kittenNumber1].name + ' only has ' + kittens[kittenNumber1].votes + '.');
-      } else {
-        console.log('A tie!');
-        var el = $('#vote-count');
-        el.html(kittens[kittenNumber1].name + ' has ' + kittens[kittenNumber1].votes + ' votes and so does ' + kittens[kittenNumber2].name + ' - it\'s a tie!');
-        var el = $('#tie1');
-        el.attr('class', 'showthis blink');
-        var el = $('#tie2');
-        el.attr('class', 'showthis blink');
-      }
-    // var el = document.getElementById('choice1');
-    // el.setAttribute('class', 'choice-box winner');
-    // var elP1 = document.getElementById('button1-wrap');
-    // elP1.setAttribute('class', 'hidethis');
-    // var elP2 = document.getElementById('button2-wrap');
-    // elP2.setAttribute('class', 'hidethis');
-    // var elWin = document.getElementById('one-wins');
-    // elWin.setAttribute('class', 'showthis blink');
-    // var elLose = document.getElementById('two-loses');
-    // elLose.setAttribute('class', 'showthis blink');
-    // var elPlayAgain = document.getElementById('play-again-wrap');
-    // elPlayAgain.setAttribute('class', 'showthis');
-    // console.log('You voted for ' + kittens[kittenNumber1].name + '!');
-    var el = $('#button1-wrap');
-    el.attr('class', 'hidethis');
-    var el = $('#button2-wrap');
-    el.attr('class', 'hidethis');
-    var el = $('#play-again');
-    el.prop('disabled', false);
-    var el = $('#vote-count');
-    makeChart();
+
+    var el = $('#choice1');
+    el.attr('class', 'choice-box winner');
+    var elP1 = $('#button1-wrap');
+    elP1.attr('class', 'hidethis');
+    var elP2 = $('#button2-wrap');
+    elP2.attr('class', 'hidethis');
+    var elWin = $('#one-wins');
+    elWin.attr('class', 'showthis blink');
+    var elLose = $('#two-loses');
+    elLose.attr('class', 'showthis blink');
+    var elPlayAgain = $('#play-again-wrap');
+    elPlayAgain.attr('class', 'showthis');
+    console.log('You voted for ' + kittens[kittenNumber1].name + '!');
   };
 
   var voteForTwo = function(event) {
     event.preventDefault();
     kittens.votes2 += 1;
-    // var el = document.getElementById('choice2');
-    // el.setAttribute('class', 'choice-box winner');
-    // var elP1 = document.getElementById('button1-wrap');
-    // elP1.setAttribute('class', 'hidethis');
-    // var elP2 = document.getElementById('button2-wrap');
-    // elP2.setAttribute('class', 'hidethis');
-    // var elWin = document.getElementById('two-wins');
-    // elWin.setAttribute('class', 'showthis blink');
-    // var elLose = document.getElementById('one-loses');
-    // elLose.setAttribute('class', 'showthis blink');
-    // var elPlayAgain = document.getElementById('play-again-wrap');
-    // elPlayAgain.setAttribute('class', 'showthis');
-    // console.log('You voted for ' + kittens[kittenNumber2].name + '!');
+
+    var el = $('#choice2');
+    el.attr('class', 'choice-box winner');
+    var elP1 = $('#button1-wrap');
+    elP1.attr('class', 'hidethis');
+    var elP2 = $('#button2-wrap');
+    elP2.attr('class', 'hidethis');
+    var elWin = $('#two-wins');
+    elWin.attr('class', 'showthis blink');
+    var elLose = $('#one-loses');
+    elLose.attr('class', 'showthis blink');
+    var elPlayAgain = $('#play-again-wrap');
+    elPlayAgain.attr('class', 'showthis');
+    console.log('You voted for ' + kittens[kittenNumber2].name + '!');
   };
+
   var voteAgain = function(event) {
     event.preventDefault();
-    blankChart();
-    var el = $('#button1-wrap');
-    el.attr('class', 'showthis');
-    var el = $('#button2-wrap');
-    el.attr('class', 'showthis');
-    var el = $('#one-wins');
-    el.attr('class', 'hidethis blink');
-    var el = $('#two-wins');
-    el.attr('class', 'hidethis blink');
-    var el = $('#tie1');
-    el.attr('class', 'hidethis blink');
-    var el = $('#tie2');
-    el.attr('class', 'hidethis blink');
-    var el = $('#vote-count');
-    el.html('');
-    // var el = $('#play-again-wrap');
-    // el.attr('class', 'hidethis');
-    var el = $('#play-again');
-    el.prop('disabled', true);
-    pickKittens();
+
   };
-   // var votes = function() {
-   //  console.log('im counting votes');
-   //  counter++
-   //  console.log(counter);
-  };
+
   voteForkitty();
   $('#choose1').click(voteForOne);
   $('#choose2').click(voteForTwo);
-  $('#play-again').click(voteAgain);
 
   // votedOne.addEventListener('click', voteForOne);
   // votedTwo.addEventListener('click', voteForTwo);
-});
-})();
+};
